@@ -3,7 +3,7 @@
 같은 과일끼리 붙여 체리부터 수박까지 키우는 물리 퍼즐 게임.
 외부 라이브러리 없이 **원-원 충돌 물리 엔진을 직접 구현**했습니다.
 
-**▶ 플레이: https://ayun-jeong.github.io/suika-game/**
+**▶ 플레이: https://ayun-jeong.github.io/subak-game/**
 
 ![수박게임](assets/og.png)
 
