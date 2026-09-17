@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>수박게임 — 과일을 합쳐 수박까지</title>
+<meta name="description" content="같은 과일끼리 붙여 체리부터 수박까지 키우는 물리 퍼즐 게임. 설치 없이 브라우저에서 바로 플레이하세요.">
+<meta name="theme-color" content="#0B1F16">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="수박게임 — 과일을 합쳐 수박까지">
+<meta property="og:description" content="같은 과일끼리 붙여 체리부터 수박까지 키우는 물리 퍼즐 게임.">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="stage">
+  <div class="col col-left">
+    <div>
+      <h1 class="wordmark">수박<em>게임</em></h1>
+      <p class="tagline">같은 과일끼리 붙이면 다음 과일이 됩니다. 점선 위로 넘치면 끝.</p>
+    </div>
+    <div class="card">
+      <div class="label">점수</div>
+      <div class="score-value" id="score">0</div>
+      <div class="best-row">
+        <span class="label">최고 기록</span>
+        <span class="num" id="best">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="board-col">
+    <div class="mobile-bar">
+      <div>
+        <div class="label">점수</div>
+        <div class="score-value" id="scoreM">0</div>
+      </div>
+      <div class="mb-next">
+        <div class="label">다음</div>
+        <canvas id="nextCanvasM" width="104" height="104"></canvas>
+      </div>
+    </div>
+
+    <div class="rim"></div>
+    <div class="board" id="board" tabindex="0" role="application"
+         aria-label="수박게임 놀이판. 좌우 방향키로 이동, 스페이스로 떨어뜨립니다.">
+      <canvas id="game" width="420" height="620"></canvas>
+      <div class="over" id="over">
+        <div class="label">게임 오버</div>
+        <h2 id="overTitle">상자가 넘쳤어요</h2>
+        <div class="final" id="finalScore">0</div>
+        <p class="sub" id="overSub">최고 기록까지 조금 더</p>
+        <button class="primary" id="againBtn">다시 하기</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="restartBtn">다시 시작</button>
+      <button id="soundBtn" aria-pressed="true">소리 켜짐</button>
+    </div>
+
+    <div class="mobile-chain" id="chainM"></div>
+  </div>
+
+  <div class="col col-right">
+    <div class="card next-card">
+      <div class="label">다음 과일</div>
+      <canvas id="nextCanvas" width="176" height="176"></canvas>
+      <div class="next-name" id="nextName">체리</div>
+    </div>
+    <div class="card">
+      <div class="label">과일 도감</div>
+      <div class="chain" id="chain"></div>
+      <div class="best-row">
+        <span class="label">최고 과일</span>
+        <span class="num" id="bestFruit" style="font-family:var(--body);font-size:13px">체리</span>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/game.js"></script>
+</body>
+</html>
